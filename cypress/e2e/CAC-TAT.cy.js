@@ -151,27 +151,27 @@ it('marca ambos checkboxes, depois desmarca o último e verifica se o mesmo foi 
 
 it('seleciona um arquivo da pasta fixtures e verifica se o mesmo foi selecionado', () => {
   cy.get('#file-upload')
-    .selectFile('cypress\\fixtures\\image .png')
+    .selectFile('cypress\\fixtures\\example.json')
     .should(input => { 
-    expect(input[0].files[0].name).to.equal('cypress\\fixtures\\image .png')
+    expect(input[0].files[0].name).to.equal('cypress\\fixtures\\example.json')
     
     })
   })
   it('seleciona um arquivo simulando um drag-and-drop', () => {
     cy.get('#file-upload')
-      .selectFile('cypress\\fixtures\\image .png', { action: 'drag-drop' }) 
+      .selectFile('cypress\\fixtures\\example.json', { action: 'drag-drop' }) 
       .should(input => { 
-        expect(input[0].files[0].name).to.equal('cypress\\fixtures\\image .png')
+        expect(input[0].files[0].name).to.equal('cypress\\fixtures\\example.json')
       })
 })
 
 
 it('seleciona um arquivo utilizando uma fixture para a qual foi dada um alias', () => {
-  cy.fixture('image .png').as('file')
+  cy.fixture('example.json').as('file')
   cy.get('#file-upload')
     .selectFile('@file')
     .should(input => { 
-      expect(input[0].files[0].name).to.equal('image .png')
+      expect(input[0].files[0].name).to.equal('example.json')
     })
 
 })
