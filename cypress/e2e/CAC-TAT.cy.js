@@ -171,7 +171,7 @@ it('seleciona um arquivo utilizando uma fixture para a qual foi dada um alias', 
   cy.get('#file-upload')
     .selectFile('@file')
     .should(input => { 
-      expect(input[0].files[0].name).to.equal('example.json')
+      expect(input[0].files[0].name).to.equal('cypress\\fixtures\\example.json')
     })
 
 })
