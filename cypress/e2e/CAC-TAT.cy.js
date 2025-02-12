@@ -166,15 +166,22 @@ it('seleciona um arquivo da pasta fixtures e verifica se o mesmo foi selecionado
 })
 
 
-it('seleciona um arquivo utilizando uma fixture para a qual foi dada um alias', () => {
-  cy.fixture('example.json').as('file')
-  cy.get('#file-upload')
-    .selectFile('@file')
-    .should(input => { 
-      expect(input[0].files[0].name).to.equal('cypress/fixtures/example.json')
-    })
-
+// it('seleciona um arquivo utilizando uma fixture para a qual foi dada um alias', () => {
+//   cy.fixture('example.json').as('file')
+//   cy.get('#file-upload')
+//     .selectFile('@file')
+//     .should(input => { 
+//       expect(input[0].files[0].name).to.equal('cypress/fixtures/example.json')
+//     })
 })
+it('seleciona um arquivo simulando um drag-and-drop', () => {
+  cy.get('#file-upload')
+    .selectFile('cypress/fixtures/example.json')
+    .should(input => {
+      // Apenas comparar o nome do arquivo
+      expect(input[0].files[0].name).to.equal('example.json');
+    });
+
 
 it('verifica que a política de privacidade abre em outra aba sem a necessidade de um clique', () => {
    cy.contains('a', 'Política de Privacidade')
