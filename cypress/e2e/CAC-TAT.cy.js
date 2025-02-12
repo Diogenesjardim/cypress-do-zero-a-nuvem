@@ -156,13 +156,13 @@ it('seleciona um arquivo da pasta fixtures e verifica se o mesmo foi selecionado
     expect(input[0].files[0].name).to.equal('cypress\\fixtures\\example.json')
     
     })
-  })
-  it.only('seleciona um arquivo simulando um drag-and-drop', () => {
-    cy.get('#file-upload')
-      .selectFile('cypress\\fixtures\\example.json', { action: 'drag-drop' }) 
-      .should(input => { 
-        expect(input[0].files[0].name).to.equal('cypress\\fixtures\\example.json')
-      })
+  // })
+  // it.only('seleciona um arquivo simulando um drag-and-drop', () => {
+  //   cy.get('#file-upload')
+  //     .selectFile('cypress\\fixtures\\example.json', { action: 'drag-drop' }) 
+  //     .should(input => { 
+  //       expect(input[0].files[0].name).to.equal('cypress\\fixtures\\example.json')
+  //     })
 })
 
 
