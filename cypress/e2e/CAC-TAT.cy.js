@@ -149,26 +149,6 @@ it('marca ambos checkboxes, depois desmarca o último e verifica se o mesmo foi 
     .should('not.be.checked')
 
 })
-   
-  //  Esses codigo de que começam com o caminho cypress\\fixtures\\example.json 
-  //  não funciona no Githum Actions
-
-// it('seleciona um arquivo da pasta fixtures e verifica se o mesmo foi selecionado', () => {
-//   cy.get('#file-upload')
-//     .selectFile('cypress/fixtures/')
-//     .should(input => { 
-//     expect(input[0].files[0].name).to.equal('cypress/fixtures/')
-    
-//     })
-//   })
-//   it('seleciona um arquivo simulando um drag-and-drop', () => {
-//     cy.get('#file-upload')
-//       .selectFile('cypress/fixtures/example.json', { action: 'drag-drop' }) 
-//       .should(input => { 
-//         expect(input[0].files[0].name).to.equal('cypress/fixtures/example.json')
-//       })
-// })
-
 
 it('seleciona um arquivo da pasta fixtures e verifica se o mesmo foi selecionado', () => {
   cy.get('#file-upload')
@@ -177,7 +157,7 @@ it('seleciona um arquivo da pasta fixtures e verifica se o mesmo foi selecionado
       expect(input[0].files[0].name).to.equal('example.json');
     });
   })
-  
+
 it('seleciona um arquivo simulando um drag-and-drop', () => {
       cy.get('#file-upload')
         .selectFile('cypress/fixtures/example.json', { action: 'drag-drop' })
