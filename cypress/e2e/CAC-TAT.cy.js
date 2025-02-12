@@ -155,9 +155,9 @@ it('marca ambos checkboxes, depois desmarca o último e verifica se o mesmo foi 
 
 it('seleciona um arquivo da pasta fixtures e verifica se o mesmo foi selecionado', () => {
   cy.get('#file-upload')
-    .selectFile('example.json')
+    .selectFile('cypress/fixtures/')
     .should(input => { 
-    expect(input[0].files[0].name).to.equal('example.json')
+    expect(input[0].files[0].name).to.equal('cypress/fixtures/')
     
     })
   })
