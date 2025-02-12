@@ -5,7 +5,15 @@ jobs:
   cypress-run:
     runs-on: ubuntu-22.04
     steps:
-      - name: Checkout
+      - name: Checkout do código
         uses: actions/checkout@v4
-      - name: Cypress run
+
+      - name: Instalar dependências
+        run: npm install
+
+      - name: Rodar testes Cypress
         uses: cypress-io/github-action@v6
+        with:
+          build: npm run build
+          start: npm start
+          wait-on: 'http://localhost:3000' # Ajuste para a URL do seu app, se necessário

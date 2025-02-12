@@ -149,32 +149,32 @@ it('marca ambos checkboxes, depois desmarca o último e verifica se o mesmo foi 
     .should('not.be.checked')
 })
 
-// it('seleciona um arquivo da pasta fixtures e verifica se o mesmo foi selecionado', () => {
-//   cy.get('#file-upload')
-//     .selectFile('cypress\\fixtures\\example.json')
-//     .should(input => { 
-//     expect(input[0].files[0].name).to.equal('cypress\\fixtures\\example.json')
+it('seleciona um arquivo da pasta fixtures e verifica se o mesmo foi selecionado', () => {
+  cy.get('#file-upload')
+    .selectFile('cypress\\fixtures\\example.json')
+    .should(input => { 
+    expect(input[0].files[0].name).to.equal('cypress\\fixtures\\example.json')
     
-    // })
-//   })
-//   it.only('seleciona um arquivo simulando um drag-and-drop', () => {
-//     cy.get('#file-upload')
-//       .selectFile('cypress\\fixtures\\example.json', { action: 'drag-drop' }) 
-//       .should(input => { 
-//         expect(input[0].files[0].name).to.equal('cypress\\fixtures\\example.json')
-//       })
-// })
+    })
+  })
+  it.only('seleciona um arquivo simulando um drag-and-drop', () => {
+    cy.get('#file-upload')
+      .selectFile('cypress\\fixtures\\example.json', { action: 'drag-drop' }) 
+      .should(input => { 
+        expect(input[0].files[0].name).to.equal('cypress\\fixtures\\example.json')
+      })
+})
 
 
-// it('seleciona um arquivo utilizando uma fixture para a qual foi dada um alias', () => {
-//   cy.fixture('example.json').as('file')
-//   cy.get('#file-upload')
-//     .selectFile('@file')
-//     .should(input => { 
-//       expect(input[0].files[0].name).to.equal('example.json')
-//     })
+it('seleciona um arquivo utilizando uma fixture para a qual foi dada um alias', () => {
+  cy.fixture('example.json').as('file')
+  cy.get('#file-upload')
+    .selectFile('@file')
+    .should(input => { 
+      expect(input[0].files[0].name).to.equal('example.json')
+    })
 
-// })
+})
 
 it('verifica que a política de privacidade abre em outra aba sem a necessidade de um clique', () => {
    cy.contains('a', 'Política de Privacidade')
