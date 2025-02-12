@@ -11,6 +11,10 @@ jobs:
       - name: Instalar dependências
         run: npm install
 
+      # Etapa para listar os arquivos na pasta fixtures
+      - name: Listar arquivos na pasta fixtures
+        run: ls cypress/fixtures/
+
       - name: Iniciar servidor
         run: npm start &  # Executa o servidor em segundo plano
 
