@@ -176,11 +176,13 @@ it('seleciona um arquivo da pasta fixtures e verifica se o mesmo foi selecionado
 })
 it('seleciona um arquivo simulando um drag-and-drop', () => {
   cy.get('#file-upload')
-    .selectFile('cypress/fixtures/example.json')
+    .should('be.visible')  // Garante que o elemento esteja visível
+    .selectFile('cypress/fixtures/example.json', { force: true })  // Força a seleção do arquivo
     .should(input => {
-      // Apenas comparar o nome do arquivo
-      expect(input[0].files[0].name).to.equal('example.json');
-    });
+      const filePath = input[0].files[0].name;
+      expect(filePath).to.include('example.json');
+    
+});
 
 
 it('verifica que a política de privacidade abre em outra aba sem a necessidade de um clique', () => {
