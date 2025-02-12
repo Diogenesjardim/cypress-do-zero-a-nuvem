@@ -14,6 +14,5 @@ jobs:
       - name: Rodar testes Cypress
         uses: cypress-io/github-action@v6
         with:
-          build: npm run build
           start: npm start
           wait-on: 'http://localhost:3000' # Ajuste para a URL do seu app, se necessário
