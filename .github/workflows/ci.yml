@@ -21,7 +21,7 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
           wait-on: 'http://localhost:3000'  # Aguarda o servidor iniciar antes de rodar os testes
-          command: npm run test:cloud  # Comando para rodar os testes na nuvem (ajustado para rodar o script)
+          command: npm run test:cloud  # Comando para rodar os testes na nuvem
         
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}  # A chave de gravação do Cypress para salvar os testes no dashboard
