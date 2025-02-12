@@ -11,8 +11,10 @@ jobs:
       - name: Instalar dependências
         run: npm install
 
+      - name: Iniciar servidor
+        run: npm start &  # Executa o servidor em segundo plano
+
       - name: Rodar testes Cypress
         uses: cypress-io/github-action@v6
         with:
-          start: npm start
-          wait-on: 'http://localhost:3000' # Ajuste para a URL do seu app, se necessário
+          wait-on: 'http://localhost:3000'  # Aguarda o servidor iniciar antes de rodar os testes
