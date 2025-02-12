@@ -12,7 +12,7 @@ jobs:
         run: npm install
 
       - name: Listar arquivos na pasta fixtures
-        run: cypress/fixtures
+        run:  cypress/fixtures/
 
       - name: Iniciar servidor
         run: npm start &  # Executa o servidor em segundo plano
